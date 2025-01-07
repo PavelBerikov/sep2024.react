@@ -1,9 +1,10 @@
 import './App.css'
+import TodoComponents from './components/TodoComponents'
 
 function App() {
   return (
     <>
-      hello okten
+        <TodoComponents/>
     </>
   )
 }
