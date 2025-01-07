@@ -6,7 +6,7 @@ import TodoComponent from './TodoComponent';
 const TodoComponents: FC = () => {
     const [todos, setTodos] = useState<ITodo[]>([])
     useEffect(() => {
-        getTodos().then(value => setTodos(value))
+        getTodos().then(value => setTodos(value.todos))
     }, []);
     return (
         <div>

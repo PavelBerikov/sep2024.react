@@ -1,6 +1,9 @@
 export interface ITodo {
-  userId: number;
   id: number;
-  title: string;
+  todo: string;
   completed: boolean;
+  userId: number;
+}
+export interface ITodoResponse {
+    todos: ITodo[]
 }
