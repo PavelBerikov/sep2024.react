@@ -6,7 +6,7 @@ export const cartService = {
         return carts.carts;
     },
     getCartsByUserId: async(id:number):Promise<ICart[]> => {
-        const carts = await fetch(`https://dummyjson.com/carts/${id}`).then((res) => res.json());
+        const carts = await fetch(`https://dummyjson.com/carts/user/${id}`).then((res) => res.json());
         return carts.carts;
     },
 }
