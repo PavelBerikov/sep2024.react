@@ -4,12 +4,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import UsersPage from './pages/UsersPage'
 import PostsPage from './pages/PostsPage'
-import CartsPage from './pages/CartsPage'
 
 const router = createBrowserRouter([
     { path: '/', element: <MainLayout/>, children: [
             {path: 'users', element: <UsersPage/>},
-            {path: 'users/carts', element: <CartsPage/>},
+            /*{path: 'users/carts', element: <CartsPage/>},*/
             {path: 'posts', element: <PostsPage/>}
         ] }
 ])

@@ -1,16 +1,19 @@
 import {FC} from 'react';
 import { IUser } from '../../interfaces/user.interface';
-import {Link} from 'react-router-dom';
 
 type PropsType = {
-    user: IUser
+    user: IUser,
+    setTriger: React.Dispatch<React.SetStateAction<boolean>>
 };
 
-const User: FC<PropsType> = ({user}) => {
+const User: FC<PropsType> = ({user, setTriger}) => {
     const {firstName, id, phone, age} = user;
+
     return (
-        <div>
-            <h2><Link state={user} to={'/users/carts'}>{id} - {firstName}</Link></h2>
+        <div onClick={() => {
+            setTriger(prev => !prev);
+        }}>
+            <h2>{id} - {firstName}</h2>
             <h3>Age - {age}</h3>
             <p>phone - {phone}</p>
         </div>

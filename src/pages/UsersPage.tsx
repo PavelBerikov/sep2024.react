@@ -5,7 +5,6 @@ const UsersPage: FC = () => {
     return (
         <div>
             <Users/>
-
         </div>
     );
 };
