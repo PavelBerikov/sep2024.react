@@ -11,7 +11,7 @@ const Users:FC = () => {
         }, []);
 
     return (
-        <div style={{width:'50%'}}>
+        <div>
             {
                 users.map((user:IUser) => <User key={user.id} user={user}/>)
             }
