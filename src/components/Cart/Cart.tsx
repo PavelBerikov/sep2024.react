@@ -6,10 +6,14 @@ type PropsType = {
 };
 
 const Cart: FC<PropsType> = ({cart}) => {
-    const {id, products, userId} = cart
+    const {id, userId, products} = cart
     return (
         <div>
-            {products}
+            <div>{id} - {userId}</div>
+            {
+                products.map(product => <div key={cart.id}>{product.title} - {product.price}</div>)
+            }
+            <hr/>
         </div>
     );
 };

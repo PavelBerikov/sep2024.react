@@ -12,7 +12,6 @@ const User: FC<PropsType> = ({user}) => {
             <h2>{id} - {firstName}</h2>
             <h3>Age - {age}</h3>
             <p>phone - {phone}</p>
-
         </div>
     );
 };

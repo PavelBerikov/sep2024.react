@@ -6,7 +6,7 @@ import Cart from '../Cart/Cart';
 const Carts: FC = () => {
     const [carts, setCarts] = useState<ICart[]>([])
     useEffect(() => {
-        cartService.getAllCarts().then(value => setCarts(value));
+         cartService.getAllCarts().then(value => setCarts(value));
     }, []);
     return (
         <div style={{ width: '50vw', borderRadius: '10px', border: '1px solid black' }}>
