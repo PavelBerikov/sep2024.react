@@ -7,6 +7,7 @@ import Carts from '../carts/Carts';
 const Users:FC = () => {
     const [users, setUsers] = useState<IUser[]>([])
     const [trig, setTrig] = useState<boolean>(false);
+    const [id, setId] = useState<number>(0);
 
     useEffect(() => {
         UserService.allUsers().then(value => setUsers(value))
@@ -15,10 +16,10 @@ const Users:FC = () => {
     return (
         <div>
             {
-                trig && users.map(user => <Carts id={user.id} />)
+                trig && <Carts id={id} />
             }
             {
-                users.map((user:IUser) => <User setTriger={setTrig} key={user.id} user={user}/>)
+                users.map((user:IUser, index) => <User setId={setId} setTriger={setTrig} key={index} user={user}/>)
             }
 
         </div>
