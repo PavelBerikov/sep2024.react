@@ -5,17 +5,15 @@ import User from '../user/User';
 
 const Users:FC = () => {
     const [users, setUsers] = useState<IUser[]>([])
-
     useEffect(() => {
         UserService.allUsers().then(value => setUsers(value))
         }, []);
 
     return (
-        <div style={{width:'50%'}}>
+        <div>
             {
                 users.map((user:IUser) => <User key={user.id} user={user}/>)
             }
-
         </div>
     );
 };
