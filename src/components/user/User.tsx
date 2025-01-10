@@ -10,10 +10,11 @@ const User: FC<PropsType> = ({user, setTriger}) => {
     const {firstName, id, phone, age} = user;
 
     return (
-        <div onClick={() => {
-            setTriger(prev => !prev);
-        }}>
-            <h2>{id} - {firstName}</h2>
+        <div>
+            <h2 style={{cursor:'pointer'}} onClick={() => {
+                setTriger(prev => !prev);
+
+            }}>{id} - {firstName}</h2>
             <h3>Age - {age}</h3>
             <p>phone - {phone}</p>
         </div>

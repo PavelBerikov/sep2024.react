@@ -7,13 +7,14 @@ type Props = {
     id: number;
 }
 const Carts: FC<Props> = ({id}) => {
+    console.log(id)
     const [carts, setCarts] = useState<ICart[]>([])
     /*const {state} = useLocation()
     console.log(state.id)*/
 
     useEffect(() => {
-         cartService.getAllCarts().then(value => setCarts(value.filter(cart => cart.userId === id)));
-    }, []);
+            cartService.getAllCarts().then(value => setCarts(value.filter(cart => cart.id === id)));
+        }, []);
     return (
         <div>
             {
