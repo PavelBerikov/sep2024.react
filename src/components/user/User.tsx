@@ -13,7 +13,7 @@ const User: FC<PropsType> = ({user}) => {
         <div>
             <h2><Link state={user} to={'carts'}>{id} - {firstName}</Link></h2>
             <h3>Age - {age}</h3>
-            <p>phone - {phone}</p>
+            <p>Phone - {phone}</p>
             <hr/>
         </div>
     );
