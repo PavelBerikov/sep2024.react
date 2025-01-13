@@ -1,7 +1,15 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import MainLayout from './layouts/MainLayout';
+import UsersPage from './pages/UsersPage';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-createRoot(document.getElementById('root')!).render(
-    <App />
-)
+const router = createBrowserRouter([
+    {path: '/', element: <MainLayout/>, children: [
+            {path: 'users', element: <UsersPage/>, children:[
+                    {path:'users/:page', element: <UsersPage/>}
+                ]}
+        ]}
+]);
+createRoot(document.getElementById('root')!)
+    .render(<RouterProvider router={router}/>)
