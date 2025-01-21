@@ -9,7 +9,8 @@ const axiosInstance = axios.create({
 
 export const authService = {
     userAuth: async (user:IUserLogin):Promise<IUserWithTokens> => {
-        const {data} = await axiosInstance.post<IUserWithTokens>('auth/login', user)
+        const {data} = await axiosInstance.post<IUserWithTokens>('/auth/login', user)
+        console.log(data)
         return data
     }
 }
