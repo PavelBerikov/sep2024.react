@@ -1,21 +1,20 @@
-import {FC, useEffect, useState} from 'react';
-import { authService } from '../../services/api.services';
-import { IUserWithTokens } from '../../interfaces/userWithTokens.interface';
+import {FC, useEffect} from 'react';
+import { loadAuthProducts, refresh } from '../../services/api.services';
 
 const Products:FC = () => {
-    const [user, setUser] = useState<IUserWithTokens | null>(null)
     useEffect(() => {
-        const login = localStorage.getItem('login');
-        if (login){
-            console.log(JSON.parse(login));
-            authService.userAuth(JSON.parse(login)).then(value => setUser(value));
-        }
+        loadAuthProducts().then(products => {
+            console.log(products);
+        }).catch(reason => {
+            console.log(reason)
+            refresh().
+            then(() => loadAuthProducts())
+                .then(value => console.log(value))
+        })
+        ;
     }, []);
     return (
         <div>
-            {
-                user&& <div>{user.accessToken}*****{user.refreshToken}</div>
-            }
         </div>
     );
 };

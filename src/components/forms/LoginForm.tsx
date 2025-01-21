@@ -1,16 +1,13 @@
 import {FC} from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { IUserLogin } from '../../interfaces/userLogin.interface';
+import { authService } from '../../services/api.services';
 
 const LoginForm:FC = () => {
-    const {register, handleSubmit, reset} = useForm<IUserLogin>({mode:'all'});
-    const navigate = useNavigate();
-    const foo = (user:IUserLogin): IUserLogin => {
-        localStorage.setItem('login', JSON.stringify(user));
-        navigate('/login/resources');
-        reset()
-        return user
+    const {register, handleSubmit, reset} = useForm<IUserLogin>();
+    const foo = async (user:IUserLogin) => {
+        await authService.userAuth(user);
+        reset();
     }
     return (
         <form onSubmit={handleSubmit(foo)}>

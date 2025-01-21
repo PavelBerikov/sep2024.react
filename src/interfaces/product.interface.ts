@@ -44,7 +44,7 @@ export interface IProduct {
   thumbnail: string;
 }
 
-export interface IProducts {
+export interface IProductResponseModelType {
   products: IProduct[];
   total: number;
   skip: number;
