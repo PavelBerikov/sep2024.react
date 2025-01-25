@@ -17,7 +17,6 @@ const loadUsers = createAsyncThunk(
         }
     }
 )
-
 export const userSlice = createSlice({
     name: 'userSlice',
     initialState: initialState,
