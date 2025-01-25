@@ -8,7 +8,7 @@ type PropsType = {
 const Post: FC<PropsType> = ({post}) => {
     return (
         <div>
-            {post.id} - {post.title}
+            {post.id} -- {post.title}
         </div>
     );
 };
