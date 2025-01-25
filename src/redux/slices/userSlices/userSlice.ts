@@ -5,7 +5,7 @@ type userSliceType = {
     users: IUser[]
 }
 const initialState:userSliceType = {users: []}
-const loadUsers = createAsyncThunk(
+export const loadUsers = createAsyncThunk(
     'userSlices/loadUsers',
     async (_, thunkAPI) => {
         try {

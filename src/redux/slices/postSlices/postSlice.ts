@@ -5,7 +5,7 @@ type postSliceType = {
     posts: IPost[]
 }
 const initialState:postSliceType = {posts: []}
-const loadPosts = createAsyncThunk(
+export const loadPosts = createAsyncThunk(
     'postsSlice/loadPosts',
     async (_, thunkAPI) => {
         try {
