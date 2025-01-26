@@ -3,13 +3,14 @@ import {FC} from 'react';
 import { IComment } from '../../interfaces/comment.interface';
 
 type PropsType = {
-    comment: IComment
+    comment: IComment,
+    trig?:boolean
 };
 
 const Comment: FC<PropsType> = ({comment}) => {
     return (
         <div>
-            {comment.id} - {comment.body}
+            <i>{comment.id} - {comment.body}</i>
         </div>
     );
 };

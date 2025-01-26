@@ -8,6 +8,7 @@ const Menu:FC = () => {
             <li><Link to={'users'}>Users</Link></li>
             <li><Link to={'posts'}>Posts</Link></li>
             <li><Link to={'comments'}>Comments</Link></li>
+            <li><Link to={'userInfo'}>User with posts</Link></li>
         </ul>
     );
 };

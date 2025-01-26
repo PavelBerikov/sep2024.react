@@ -5,7 +5,7 @@ import { useAppDispatch } from '../../redux/hooks/useAppDispatch';
 import {postSliceActions } from '../../redux/slices/postSlices/postSlice';
 
 const Posts:FC = () => {
-    const {postsSlice} = useAppSelector(state => state);
+    const posts = useAppSelector(state => state.postsSlice.posts);
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(postSliceActions.loadPosts());
@@ -13,7 +13,7 @@ const Posts:FC = () => {
     return (
         <div>
             {
-                postsSlice.posts.map((post) => <Post key={post.id} post={post} />)
+                posts.map((post) => <Post key={post.id} post={post} />)
             }
         </div>
     );

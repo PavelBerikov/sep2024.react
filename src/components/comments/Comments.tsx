@@ -1,19 +1,14 @@
-import {FC, useEffect} from 'react';
+import {FC} from 'react';
 import { useAppSelector } from '../../redux/hooks/useAppSelector';
-import { useAppDispatch } from '../../redux/hooks/useAppDispatch';
-import { commentSliceActions } from '../../redux/slices/commentSlice/commentSlice';
 import Comment from '../comment/Comment'
 
 const Comments:FC = () => {
-    const {commentsSlice} = useAppSelector(state => state);
-    const dispatch = useAppDispatch();
-    useEffect(() => {
-        dispatch(commentSliceActions.loadComments());
-    }, []);
+    const comments = useAppSelector(state => state.commentsSlice.comments);
+    console.log(comments);
     return (
         <div>
             {
-                commentsSlice.comments.map(comment => <Comment key={comment.id} comment={comment} />)
+                comments.map(comment => <Comment key={comment.id} comment={comment} />)
             }
         </div>
     );

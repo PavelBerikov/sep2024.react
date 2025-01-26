@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import Users from '../components/users/Users';
 
-const UsersPage:FC = () => {
+const UserInfoPage:FC = () => {
     return (
         <div>
             <Users/>
@@ -9,4 +9,4 @@ const UsersPage:FC = () => {
     );
 };
 
-export default UsersPage;
+export default UserInfoPage;
